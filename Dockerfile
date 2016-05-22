@@ -9,9 +9,8 @@ RUN wget -O /tmp/pmwiki-${PMWIKI_VERSION}.tgz http://www.pmwiki.org/pub/pmwiki/p
     tar -xvzC /tmp/ -f /tmp/pmwiki-${PMWIKI_VERSION}.tgz && \
     cp -r /tmp/pmwiki-${PMWIKI_VERSION}/* /var/www/html/ && \
     mkdir /var/www/html/wiki.d/ &&  \
-    chmod 2777 /var/www/html/wiki.d/ && \
-    rm /var/www/html/index.html
+    chmod 2777 /var/www/html/wiki.d/ 
 
 COPY index.php /var/www/html/
 
-VOLUME ["/var/www/html/wiki.d/","/var/www/html/local/","/var/www/html/cookbook/"]
+VOLUME ["/var/www/html/wiki.d/","/var/www/html/local/","/var/www/html/cookbook/", "/var/www/html/pub"]
