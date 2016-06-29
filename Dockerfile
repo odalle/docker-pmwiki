@@ -7,8 +7,9 @@ ENV PMWIKI_VERSION 2.2.80
 
 RUN wget -O /tmp/pmwiki-${PMWIKI_VERSION}.tgz http://www.pmwiki.org/pub/pmwiki/pmwiki-${PMWIKI_VERSION}.tgz && \
     tar -xvzC /tmp/ -f /tmp/pmwiki-${PMWIKI_VERSION}.tgz && \
+    mkdir -p /var/www/html/ &&  \
     cp -r /tmp/pmwiki-${PMWIKI_VERSION}/* /var/www/html/ && \
-    mkdir /var/www/html/wiki.d/ &&  \
+    mkdir -p /var/www/html/wiki.d/ &&  \
     chmod 2777 /var/www/html/wiki.d/ 
 
 COPY index.php /var/www/html/
