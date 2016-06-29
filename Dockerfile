@@ -1,7 +1,7 @@
 FROM nginx:stable
 
 RUN apt-get update\
-    && apt-get install -y wget php5
+    && apt-get install -y wget php5 php5-fpm
 
 ENV PMWIKI_VERSION 2.2.80
 
