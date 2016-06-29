@@ -1,7 +1,7 @@
-FROM php:5.6-apache
+FROM nginx:stable
 
-RUN apt-get update && apt-get install -y \
-      wget
+RUN apt-get update\
+    && apt-get install -y wget php5
 
 ENV PMWIKI_VERSION 2.2.80
 
@@ -13,4 +13,4 @@ RUN wget -O /tmp/pmwiki-${PMWIKI_VERSION}.tgz http://www.pmwiki.org/pub/pmwiki/p
 
 COPY index.php /var/www/html/
 
-VOLUME ["/var/www/html/wiki.d/","/var/www/html/local/","/var/www/html/cookbook/", "/var/www/html/pub"]
+VOLUME ["/var/www/html/wiki.d/","/var/www/html/local/","/var/www/html/cookbook/", "/var/www/html/pub", "/etc/nginx/conf.d"]
