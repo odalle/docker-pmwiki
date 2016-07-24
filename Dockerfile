@@ -6,6 +6,12 @@ RUN apt-get update\
 # make php-fpm run as user nginx
 RUN sed -i 's/www-data/nginx/g' /etc/php5/fpm/pool.d/*
 
+# set locale
+RUN sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+RUN locale-gen
+
 ENV PMWIKI_VERSION 2.2.88
 
 RUN wget -O /tmp/pmwiki-${PMWIKI_VERSION}.tgz http://www.pmwiki.org/pub/pmwiki/pmwiki-${PMWIKI_VERSION}.tgz && \
