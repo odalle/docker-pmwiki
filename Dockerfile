@@ -1,7 +1,7 @@
 FROM nginx:stable
 
 RUN apt-get update\
-    && apt-get install -y wget php5 php5-fpm php5-gd
+    && apt-get install -y wget php5 php5-fpm php5-gd locales
 
 # make php-fpm run as user nginx
 RUN sed -i 's/www-data/nginx/g' /etc/php5/fpm/pool.d/*
