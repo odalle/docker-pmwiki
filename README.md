@@ -1,5 +1,5 @@
 # docker-pmwiki
-![license](https://img.shields.io/github/license/sesceu/pmwiki.svg "license")
+![license](https://img.shields.io/github/license/sesceu/docker-pmwiki.svg "license")
 ![stars](https://img.shields.io/docker/stars/sesceu/pmwiki.svg "stars")
 ![pulls](https://img.shields.io/docker/pulls/sesceu/pmwiki.svg "pulls")
 
